@@ -3,7 +3,7 @@ const express = require("express");
 const app = express();
 const port = 5500;
 const cors = require("cors");
-app.use(cors({origin:"https://hannaevhangdi.netlify.app"}));
+app.use(cors());
 const dbconnection = require("./db/dbConfig");
 //user route middelware file
 const userRoute = require("./routes/userRoute");
