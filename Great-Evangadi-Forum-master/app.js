@@ -4,24 +4,24 @@ const app = express();
 const port = 5500;
 const cors = require("cors");
 app.use(cors());
-const dbconnection = require("../db/dbConfig");
+const dbconnection = require("./db/dbConfig");
 //user route middelware file
-const userRoute = require("../routes/userRoute");
+const userRoute = require("./routes/userRoute");
 //json middleware
 
 app.use(express.json());
 //authentication-
-const authentication = require("../middleware/authMiddleware");
+const authentication = require("./middleware/authMiddleware");
 //user route middelware
 app.use("/api/users", userRoute);
 
 //question route middelware file
-const questionRoute = require("../routes/qustionRoute");
+const questionRoute = require("./routes/qustionRoute");
 //question route middelware
 app.use("/api/questions", authentication, questionRoute);
 
 //answer route middelware file
-const answerRoute = require("../routes/answerRoute");
+const answerRoute = require("./routes/answerRoute");
 //answer route middelware
 
 app.use("/api", authentication, answerRoute);
