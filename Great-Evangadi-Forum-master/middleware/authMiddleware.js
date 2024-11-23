@@ -12,7 +12,7 @@ async function autMiddleware(req, res, next) {
   //console.log(token);
 
   try {
-    const { username, userid } = jwt.verify(token, process.env.JWT_SECRET);
+    const { username, userid } = jwt.verify(token, process.env.JWt_SECRET);
     req.users = { username, userid };
     next();
   } catch (error) {
